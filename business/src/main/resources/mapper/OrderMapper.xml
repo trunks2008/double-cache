@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dc.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.cn.dc.biz.entity.Order">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="order_number" jdbcType="VARCHAR" property="orderNumber" />
+    <result column="money" jdbcType="VARCHAR" property="money" />
+    <result column="status" jdbcType="BIGINT" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, order_number, money, status
+  </sql>
+
+</mapper>

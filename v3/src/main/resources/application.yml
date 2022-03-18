@@ -1,0 +1,41 @@
+server:
+  port: 9526
+
+spring:
+  application:
+    name: double-cache
+  datasource:
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: hydra
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      connection-test-query: SELECT 1 FROM DUAL
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: MyHikariCP
+      max-lifetime: 60000
+      connection-timeout: 30000
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 0
+    timeout: 10000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.cn.biz.entity
+
+logging:
+  level:
+    com.cn.dc: debug
+    org.springframework: warn
